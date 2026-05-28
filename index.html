@@ -1,0 +1,1774 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    Divertrix | Arcade • Cinema • Café
+  </title>
+
+  
+  <link rel="icon"
+        type="image/png"
+        href="imgs/divertrix_logo_sem_fundo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <style>
+
+    *{
+      margin:0; 
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#090014;
+      font-family:'Poppins', sans-serif; 
+      overflow-x:hidden; 
+      text-align: center;
+    }
+
+    
+    h1,h2,h3{
+      font-family:'Orbitron', sans-serif;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+
+
+    .hero{
+      position:relative; 
+      height:100vh; 
+      overflow:hidden; 
+
+      display:flex; 
+      justify-content:center; 
+      align-items:center; 
+    }
+
+    
+    .parallax-layer{
+      position:absolute; 
+      inset:0;
+      
+    }
+
+    .bg1{
+      background:
+      radial-gradient(circle at top,#ff66c455,transparent 60%),
+      linear-gradient(to bottom,#130021,#090014); 
+    }
+
+    
+    .grid{
+      background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+
+      background-size:60px 60px;
+      animation:gridMove 0.5s linear infinite;
+    } 
+
+    
+    @keyframes gridMove{
+      from{
+        transform:translateY(0);
+      }
+
+      to{
+        transform:translateY(60px);
+      }
+    }
+
+    
+    .hero-content{
+      position:relative;
+      z-index:5;
+      padding:20px;
+    }
+
+    
+    .hero h1{
+      font-size:7rem;
+      
+
+      letter-spacing:12px;
+      color:#ff9ee5;
+      text-shadow:
+      0 0 10px #ff66c4,
+      0 0 30px #ff66c4,
+      0 0 60px #ff66c4;
+    }
+
+    .hero p{
+      margin-top:25px;
+
+      max-width:800px;
+
+      font-size:1.3rem;
+      line-height:2;
+
+      color:#ffe7ff;
+       }
+
+    .hero button{
+
+      margin-top:40px;
+
+      padding:18px 40px;
+
+      border:none;
+      border-radius:20px;
+
+      background:
+      linear-gradient(
+      90deg,
+      #ff66c4,
+      #7c4dff);
+
+      color:white;
+
+      font-size:1rem;
+      cursor:pointer;
+
+      transition:.4s;
+
+      box-shadow:
+      0 0 20px #ff66c488;
+    }
+
+    .hero button:hover{
+
+      transform:
+      translateY(-5px), 
+      scale(1.05); 
+      box-shadow:
+      0 0 40px #ff66c4; 
+    }
+
+    
+    /* =========================
+       SECTIONS
+    ========================== */
+
+    section{
+      padding:120px 10%;
+      max-width:1400px;
+      margin:auto;
+}
+    
+
+    .section-title{
+
+      font-size:3rem;
+
+      margin-bottom:30px;
+
+      color:#7df9ff;
+
+      text-shadow:
+      0 0 15px #7df9ff88;
+    }
+
+    .section-text{
+
+      max-width:900px;
+
+      font-size:1.1rem;
+      line-height:2;
+
+      color:#ffe9ff;
+    }
+
+    /* =========================
+       IMAGENS
+    ========================== */
+
+    .image-wrapper{
+
+      position:relative;
+
+      width:100%;
+      max-width:1100px;
+
+      margin:50px auto;
+
+      border-radius:30px;
+
+      overflow:hidden;
+
+    }
+
+    .image-wrapper::after{
+
+      content:'';
+
+      position:absolute;
+      inset:0;
+
+      background:
+      linear-gradient(
+      to top,
+      rgba(9,0,20,.75),
+      transparent 40%);
+
+      border-radius:30px;
+    }
+
+    .section-image{
+
+      width:100%;
+      height:550px;
+
+      object-fit:cover;
+
+      display:block;
+
+      border-radius:30px;
+
+      border:1px solid rgba(255,255,255,.15);
+
+      filter:
+      saturate(1.1)
+      contrast(1.05);
+
+      transition:.5s;
+
+      box-shadow:
+      0 0 30px rgba(255,102,196,.25);
+
+    }
+
+    .section-image:hover{
+
+      transform:scale(1.02);
+
+    }
+
+    /* =========================
+       CARDS
+    ========================== */
+
+    .cards{
+
+      display:grid;
+
+      grid-template-columns:
+      repeat(auto-fit,minmax(260px,1fr));
+
+      gap:30px;
+
+      margin-top:60px;
+    }
+
+    .card{
+
+      background:
+      rgba(255,255,255,.05);
+
+      border:
+      1px solid rgba(255,255,255,.1);
+
+      border-radius:30px;
+
+      padding:40px;
+
+      backdrop-filter:blur(12px);
+
+      transition:.4s;
+
+      position:relative;
+
+      overflow:hidden;
+    }
+
+    .card::before{
+
+      content:'';
+
+      position:absolute;
+
+      width:200px;
+      height:200px;
+
+      border-radius:50%;
+
+      background:#ff66c422;
+
+      top:-100px;
+      right:-100px;
+
+      filter:blur(20px);
+    }
+
+    .card:hover{
+
+      transform:translateY(-10px);
+
+      border-color:#ff66c4;
+
+      box-shadow:
+      0 0 30px #ff66c444;
+    }
+
+    .emoji{
+      font-size:4rem;
+    }
+
+    .card h3{
+
+      margin-top:20px;
+      margin-bottom:20px;
+
+      color:#7df9ff;
+    }
+
+    .card p{
+
+      line-height:1.8;
+
+      color:#ffe9ff;
+    }
+
+    /* =========================
+       CINEMA
+    ========================== */
+
+    .cinema{
+
+      background:
+      linear-gradient(
+      180deg,
+      #12001f,
+      #1a0033);
+
+    }
+
+    /* =========================
+       CAFÉ BOX
+    ========================== */
+
+    .cafe-box{
+
+      margin-top:50px;
+
+      background:
+      linear-gradient(
+      135deg,
+      rgba(255,102,196,.15),
+      rgba(125,249,255,.08));
+
+      border:
+      1px solid rgba(255,255,255,.12);
+
+      border-radius:40px;
+
+      padding:60px;
+
+      backdrop-filter:blur(15px);
+    }
+
+    .cafe-box h3{
+
+      font-size:2rem;
+
+      color:#ff9ee5;
+
+      margin-bottom:20px;
+    }
+
+    .cafe-box p{
+
+      line-height:2;
+
+      color:#fff0ff;
+    }
+
+    /* =========================
+       RESPONSIVO
+    ========================== */
+
+    @media(max-width:900px){
+
+      .hero h1{
+        font-size:4rem;
+      }
+
+      .section-title{
+        font-size:2.2rem;
+      }
+
+      .section-image{
+        height:350px;
+      }
+
+    }
+
+/*<!--Estilo do FOOTER-->*/
+
+/* =========================================================
+   FOOTER DIVERTRIX
+========================================================= */
+
+.footer-divertrix{
+
+  position:relative;
+
+  background:
+  linear-gradient(
+  180deg,
+  #070010 0%,
+  #05000d 100%);
+
+  padding:100px 10% 40px;
+
+  overflow:hidden;
+
+  border-top:
+  1px solid rgba(255,255,255,.08);
+}
+
+.footer-brand{
+  text-align:left;
+}
+
+.footer-links,
+.footer-news{
+  text-align:center;
+}
+
+/* GLOW NEON */
+
+.footer-glow{
+
+  position:absolute;
+
+  width:700px;
+  height:700px;
+
+  background:
+  radial-gradient(
+  circle,
+  rgba(255,102,196,.20),
+  transparent 70%);
+
+  top:-350px;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  filter:blur(80px);
+
+  pointer-events:none;
+}
+
+
+
+@media(max-width:1100px){
+
+  .footer-container{
+
+    grid-template-columns:
+    repeat(2, 1fr);
+
+  }
+
+}
+
+@media(max-width:700px){
+
+
+  .footer-container{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit, minmax(220px,1fr));
+
+  gap:50px;
+
+  align-items:start;
+}
+
+
+/* TITULOS */
+
+.footer-divertrix h2,
+.footer-divertrix h3{
+
+  font-family:'Orbitron', sans-serif;
+}
+
+/* LOGO */
+
+.footer-brand h2{
+
+  font-size:2.8rem;
+
+  color:#ff9ee5;
+
+  letter-spacing:4px;
+
+  margin-bottom:20px;
+
+  text-shadow:
+  0 0 10px #ff66c4,
+  0 0 30px #ff66c4;
+}
+
+.footer-brand p{
+
+  color:#d7c8e8;
+
+  line-height:1.9;
+
+  font-size:.98rem;
+}
+
+/* REDES */
+
+.footer-socials{
+
+  display:flex;
+
+  gap:15px;
+
+  margin-top:25px;
+
+  flex-wrap:wrap;
+
+    justify-content:flex-start;
+
+}
+
+.footer-container{
+
+  display:grid;
+
+  grid-template-columns:
+  1.5fr 1fr 1fr 1fr 1.3fr;
+
+  gap:50px;
+
+  align-items:start;
+}
+
+.footer-brand{
+  text-align:left;
+}
+
+.footer-links,
+.footer-news{
+  text-align:center;
+}
+
+.footer-socials{
+  display:flex;
+
+  gap:15px;
+
+  margin-top:25px;
+
+  flex-wrap:wrap;
+
+  justify-content:flex-start;
+}
+
+.footer-links a{
+  display:inline-block;
+}
+
+.footer-socials a{
+
+  text-decoration:none;
+
+  color:#7df9ff;
+
+  border:
+  1px solid rgba(125,249,255,.25);
+
+  padding:10px 18px;
+
+  border-radius:14px;
+
+  transition:.3s;
+
+  font-size:.9rem;
+}
+
+.footer-socials a:hover{
+
+  background:#ff66c4;
+
+  color:white;
+
+  transform:translateY(-4px);
+
+  box-shadow:
+  0 0 20px #ff66c4;
+}
+
+/* LINKS */
+
+.footer-links{
+
+  display:flex;
+
+  flex-direction:column;
+}
+
+.footer-links h3{
+
+  color:#7df9ff;
+
+  margin-bottom:25px;
+
+  font-size:1.1rem;
+}
+
+.footer-links a{
+
+  text-decoration:none;
+
+  color:#f3eaff;
+
+  margin-bottom:14px;
+
+  transition:.3s;
+
+  width:100%;
+}
+
+.footer-links a:hover{
+
+  color:#ff66c4;
+
+  transform:translateX(6px);
+}
+
+/* NEWSLETTER */
+
+.footer-news h3{
+
+  color:#7df9ff;
+
+  margin-bottom:25px;
+}
+
+.footer-news p{
+
+  color:#e7d9f5;
+
+  line-height:1.8;
+
+  margin-bottom:25px;
+}
+
+.newsletter-box{
+
+  display:flex;
+
+  gap:12px;
+
+  flex-wrap:wrap;
+}
+
+.newsletter-box input{
+
+  flex:1;
+
+  min-width:180px;
+
+  padding:15px;
+
+  border:none;
+
+  outline:none;
+
+  border-radius:16px;
+
+  background:
+  rgba(255,255,255,.08);
+
+  color:white;
+
+  border:
+  1px solid rgba(255,255,255,.08);
+}
+
+.newsletter-box input::placeholder{
+
+  color:#c8b8d9;
+}
+
+.newsletter-box button{
+
+  padding:15px 28px;
+
+  border:none;
+
+  border-radius:16px;
+
+  background:
+  linear-gradient(
+  90deg,
+  #ff66c4,
+  #7c4dff);
+
+  color:white;
+
+  cursor:pointer;
+
+  transition:.3s;
+
+  font-weight:600;
+}
+
+.newsletter-box button:hover{
+
+  transform:scale(1.05);
+
+  box-shadow:
+  0 0 25px #ff66c4;
+}
+
+/* LINHA */
+
+.footer-line{
+
+  width:100%;
+  height:1px;
+
+  background:
+  linear-gradient(
+  90deg,
+  transparent,
+  rgba(255,255,255,.18),
+  transparent);
+
+  margin:60px 0 30px;
+}
+
+/* FOOTER BOTTOM */
+
+.footer-bottom{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  gap:20px;
+
+  flex-wrap:wrap;
+
+  color:#c9b7dc;
+
+  font-size:.92rem;
+
+  position:relative;
+
+  z-index:2;
+}
+
+.footer-bottom span{
+
+  color:#7df9ff;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+  .footer-divertrix{
+
+    padding:80px 8% 30px;
+  }
+
+  .footer-bottom{
+
+    flex-direction:column;
+
+    text-align:center;
+  }
+
+  .footer-brand h2{
+
+    font-size:2.2rem;
+  }
+
+}
+
+
+  </style>
+
+
+
+</head>
+
+
+
+<body>
+
+   
+
+<!--Código para a navbar-->
+
+
+
+        <nav class="navbar navbar-expand-lg custom-navbar justify-content-center">
+          <div class="container-fluid">
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+
+  <ul class="navbar-nav">
+
+    <li class="nav-item">
+      <a class="nav-link active" href="#sobre_nos">Sobre nós</a>
+    </li>
+
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="#ingressos">Ingressos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#arcade_zone">Arcade Zone</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#cinema">Cinema</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#karaoke">Karaoke</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#cafeteria">Cafeteria</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#eventos">Eventos</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Mais
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="#">Blog</a></li>
+                    <li><a class="dropdown-item" href="#">Dúvidas</a></li>
+                    <li><a class="dropdown-item" href="#">Fale conosco</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+         <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="parallax-layer bg1"></div>
+    <div class="parallax-layer grid"></div>
+
+       <div class="hero-content">
+       
+
+      <h1>DIVERTRIX</h1>
+
+      <button>
+        EXPLORAR O PARQUE
+      </button>
+<div>
+
+
+</div>
+    </div>
+
+  </section>
+
+  <!-- =========================================================
+     BANNER VISUAL DE TRANSIÇÃO
+========================================================= -->
+
+<div class="preview-banner">
+
+  <img
+    src="imgs/banner.jpg"
+    alt="Banner Divertrix"
+    title="Banner Divertrix"
+    
+  >
+
+</div>
+
+  <!-- SOBRE -->
+
+  <section id="sobre_nos">
+
+    <h2 class="section-title">
+      O QUE É O DIVERTRIX? 🎪
+    </h2>
+
+    <div class="image-wrapper">
+
+      <img
+        src="imgs/fachada.jpg"
+        alt="Fachada Divertrix"
+        class="section-image"
+        title="Fachada"
+       
+      >
+
+    </div>
+
+    <p class="section-text">
+
+      Inspirado nos arcades japoneses,
+      cultura cyberpunk, animes futuristas
+      e diversão retrô, o Divertrix mistura
+      neon, tecnologia e experiências imersivas
+      em um espaço único.
+
+    </p>
+
+  </section>
+  
+<!-- INGRESSOS -->
+
+  <section class="ingressos">
+
+    <h2 class="section-title">
+      INGRESSOS 🎟
+    </h2>
+
+    <!-- INGRESSOS -->
+
+    <div id="ingressos" class="image-wrapper">
+
+      <img
+        src="imgs/tickets.jpg"
+        alt="Ingressos"
+        class="section-image"
+        title="Ingressos"
+      >
+
+    </div>
+
+    <p class="section-text">
+
+      Os ingressos do Divertrix vão além
+  de simples tickets de entrada —
+  cada um possui uma arte exclusiva
+  inspirada no universo neon,
+  cyberpunk e retrô futurista do parque.
+
+  Designs holográficos, estampas
+  temáticas e visuais colecionáveis
+  transformam cada ingresso em uma
+  lembrança única da experiência,
+  tão bonita que poderia facilmente
+  fazer parte da coleção de qualquer fã.
+
+
+    </p>
+</section>
+  <!-- FLIPERAMA -->
+
+  <section>
+
+    <h2 class="section-title">
+      ARCADE ZONE 🎮
+    </h2>
+
+    <!-- IMAGEM -->
+
+    <div id="arcade_zone" class="image-wrapper">
+
+      <img
+        src="imgs/fliperama.jpg"
+        alt="Arcade Zone"
+        class="section-image"
+        title="Arcade Zone"
+      >
+
+    </div>
+
+    <p class="section-text">
+
+      Máquinas clássicas, simuladores,
+      rhythm games e experiências retrô
+      em um espaço iluminado por neon,
+      hologramas e luzes futuristas.
+
+    </p>
+
+    
+    <div class="cards">
+
+  <div class="card"
+       onclick="openModal(
+       'Arcades',
+       'Os Arcades do Divertrix misturam o melhor dos fliperamas clássicos japoneses com experiências modernas repletas de luzes neon, efeitos holográficos e desafios interativos. Entre máquinas retrô, rhythm games e simuladores futuristas, cada partida transforma o espaço em uma verdadeira viagem ao universo gamer cyberpunk.',
+       '🎮 🕹️ 👾 ')"
+       >
+      
+
+    <div class="emoji">🕹️</div>
+
+
+
+    <h3>Arcades</h3>
+
+    <p>
+      Jogos clássicos e modernos
+      inspirados em fliperamas japoneses.
+    </p>
+<img src="imgs/pessoas_arcade2.jpg" alt="Pessoas no arcade" title="Pessoas no arcade">
+
+  </div>
+
+  <div class="card"
+       onclick="openModal(
+       'Gacha & Claw',
+       'A área de Gacha & Claw reúne máquinas de garra iluminadas, cápsulas colecionáveis e mascotes exclusivos inspirados na cultura pop japonesa. Um espaço divertido e viciante onde cada tentativa pode revelar prêmios raros, itens temáticos e lembranças únicas do universo Divertrix.',
+       '🧸🎁🎠')">
+
+    <div class="emoji">🧸</div>
+
+    <h3>Gacha & Claw</h3>
+
+    <p>
+      Máquinas de garra, cápsulas
+      colecionáveis e mascotes exclusivos.
+    </p>
+<img src="imgs/pessoas_jogando.jpg" alt="Pessoas jogando" title="Pessoas jogando">
+  </div>
+
+  <div class="card"
+       onclick="openModal(
+       'Mini Coaster',
+       'A Mini Coaster atravessa o parque em um percurso indoor cheio de neon, curvas rápidas e cenários futuristas inspirados em cidades cyberpunk. Uma atração compacta, vibrante e imersiva que combina adrenalina, luzes holográficas e uma atmosfera digna de um anime sci-fi.',
+       '🎢✨🚂',
+       )">
+
+    <div class="emoji">🎢</div>
+
+
+    <h3>Mini Coaster</h3>
+
+    <p>
+      Uma pequena montanha-russa indoor
+      atravessando o parque neon.
+    </p>
+<img src="imgs/pessoas_montanha_russa copiar.jpg" alt="Pessoas na montanha-russa" title="Pessoas na montanha-russa">
+  </div>
+
+</div>
+
+<!-- MODAL CYBERPUNK -->
+
+<div class="cyber-modal" id="cyberModal">
+
+  <div class="cyber-modal-content">
+
+    <button class="close-modal"
+            onclick="closeModal()">
+      ✕
+    </button>
+
+    <div class="scanner"></div>
+
+    <div class="modal-emoji"
+         id="modalEmoji">
+    </div>
+
+    <h2 id="modalTitle"></h2>
+
+    <p id="modalText"></p>
+
+  </div>
+
+</div>
+
+  <!-- CINEMA -->
+
+  <section class="cinema">
+
+    <h2 class="section-title">
+      CINEMA 🎬
+    </h2>
+
+    <!-- IMAGEM -->
+
+    <div id="cinema" class="image-wrapper">
+
+      <img
+        src="imgs/cinema.jpg"
+        alt="Cinema Divertrix"
+        class="section-image"
+        title="Cinema"
+      >
+
+    </div>
+
+    <p class="section-text">
+
+      Sessões especiais de sci-fi,
+      animações futuristas, maratonas
+      de Animatrix e clássicos cyberpunk
+      em um cinema totalmente imersivo.
+
+    </p>
+
+    <div >
+      <img class="image-wrapper"
+      src="imgs/interior_cinema.jpg"
+      alt="interior do cinema"
+      class="section-image"
+      title="Interior do Cinema"
+
+
+    </div>
+
+<!-- =========================
+     FILMES EM CARTAZ
+========================= -->
+
+<section class="movies-section">
+
+  <h2 class="section-title">
+    FILMES EM CARTAZ  🎞️
+  </h2>
+
+  <p class="section-text">
+    Sessões especiais de sci-fi, cyberpunk,
+    anime futurista e experiências imersivas
+    no cinema neon do Divertrix.
+  </p>
+
+  <!-- FILME 1 BEYOND-->
+
+    <div class="movie-card"
+         onclick="openMovieModal(
+         'BEYOND',
+         'Uma garota chamada Yoko procura seu gato desaparecido e acaba encontrando uma casa abandonada onde as leis da física parecem quebradas. Crianças brincam flutuando no ar, pulando entre glitches da Matrix e explorando um cenário surreal e melancólico. O curta mistura inocência, estranheza e um clima contemplativo para mostrar pequenas falhas escondidas dentro da simulação.',
+         'imgs/beyond.jpg',
+         
+)">
+
+      <img src="imgs/beyond.jpg"
+           alt="Filme Beyond">
+
+      <div class="movie-overlay">
+
+        <h3>BEYOND</h3>
+
+        <p>
+          Uma garota procura seu gato desaparecido e encontra uma falha misteriosa na Matrix: uma casa abandonada onde as leis da física não existem.
+        </p>
+
+        <span>VER SESSÃO</span>
+
+      </div>
+
+    </div>
+
+  <div class="movie-carousel">
+
+    <!-- FILME 2 -->
+
+    <div class="movie-card"
+         onclick="openMovieModal(
+         'Kids story',
+         'Um adolescente chamado Michael Karl Popper, conhecido como “Kid”, começa a perceber que existe algo errado com o mundo ao seu redor. Assombrado por sonhos estranhos e mensagens misteriosas de Neo, ele passa a questionar a própria realidade enquanto é perseguido pelos Agentes dentro da Matrix. A história mostra o despertar psicológico do personagem e sua fuga desesperada em busca da verdade.',
+         'imgs/kidsstory.jpg'
+         
+         ,
+         )"
+         >
+
+      <img src="imgs/kidsstory.jpg"
+           alt="Filme Kids story"
+           title="Filme Kids story">
+
+      <div class="movie-overlay">
+
+        <h3>KID' STORY</h3>
+
+        <p>
+          Um jovem hacker começa a desconfiar da realidade e tenta escapar da Matrix antes que seja tarde demais.
+        </p>
+
+        <span>VER SESSÃO</span>
+
+      </div>
+
+    </div>
+
+    <!-- FILME 3 PROGRAM -->
+
+    <div class="movie-card"
+         onclick="openMovieModal(
+         'PROGRAM',
+         'Cis, uma guerreira conectada a um programa de treinamento samurai, é colocada diante de uma escolha impossível: continuar lutando pela humanidade ou retornar para a ilusão confortável da Matrix. O episódio mistura filosofia, combate e estética feudal japonesa com um visual extremamente estilizado e sombrio.',
+         'imgs/PROGRAM.jpg',
+         )">
+
+      <img src="imgs/PROGRAM.jpg"
+           alt="Filme Program"
+           title="Filme Program">
+           
+      <div class="movie-overlay">
+
+        <h3>PROGRAM</h3>
+
+        <p>
+          Em um dojo virtual samurai, uma guerreira testa sua lealdade à resistência em uma simulação intensa cheia de filosofia e combate.
+        </p>
+
+        <span>VER SESSÃO</span>
+
+      </div>
+
+    </div>
+
+  
+    <!-- FILME 4 WORLD RECORD-->
+
+    <div class="movie-card"
+         onclick="openMovieModal(
+         'WORLD RECORD',
+         'Dan Davis é um atleta obcecado em ultrapassar os limites humanos e quebrar o recorde mundial dos 100 metros. Durante uma corrida extrema, seu esforço físico é tão intenso que ele consegue enxergar por alguns segundos a realidade fora da Matrix. O curta combina esportes, tensão psicológica e cenas viscerais para mostrar o corpo humano rompendo as barreiras da simulação.',
+        'imgs/corredor.jpg'
+         )">
+
+      <img src="imgs/corredor.jpg"
+           alt="Filme World record"
+           title="Filme World record">
+
+           
+
+      <div class="movie-overlay">
+
+        <h3>World Record</h3>
+
+        <p>
+          Um atleta ultrapassa os limites humanos durante uma corrida e acidentalmente começa a enxergar além da Matrix.
+        </p>
+
+        <span>VER SESSÃO</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+     MODAL CINEMA
+========================= -->
+
+<div class="movie-modal" id="movieModal">
+
+  <div class="movie-modal-content">
+
+    <button class="close-movie"
+            onclick="closeMovieModal()">
+      ✕
+    </button>
+
+    <div class="movie-scan"></div>
+
+    <img id="movieImage">
+
+    <div class="movie-info">
+
+      <h2 id="movieTitle"></h2>
+
+      <p id="movieDesc"></p>
+
+      <div class="movie-session"
+           id="movieSession">
+           
+      </div>
+
+      <button class="ticket-btn">
+        COMPRAR INGRESSO
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+  </section>
+
+
+<section>
+
+    <h2 class="section-title">
+      KARAOKE 🎤
+    </h2>
+
+    <!-- IMAGEM -->
+
+    <div id="karaoke" class="image-wrapper">
+
+      <img
+        src="imgs/karaoke.jpg"
+        alt="Karaoke"
+        class="section-image"
+        title="Karaoke"
+      >
+
+
+    </div>
+
+  <div class="image-wrapper">
+
+    <img
+    src="imgs/interior_karaoke.jpg"
+    alt="Interior do Karaoke"
+    class="section-image"
+    title="Interior do Karaoke"
+
+
+
+  </div>  
+
+    <div class="cafe-box">
+
+      <h3>
+     Karaokê Divertrix 🎵
+     </h3>
+
+      <p>
+Luzes neon, palco vibrante e a sua voz no centro da experiência.
+No Karaokê Divertrix, cada música vira um show inesquecível. Reúna os amigos, escolha seu hit favorito e mergulhe em uma atmosfera cyberpunk cheia de energia, diversão e efeitos imersivos.
+
+Dos clássicos aos sucessos do momento, aqui todo mundo nasce para brilhar. ✨
+
+        
+      </p>
+
+    </div>
+
+  </section> 
+
+    <!-- CAFETERIA -->
+
+  <section>
+
+    <h2 class="section-title">
+      CAFETERIA ☕
+    </h2>
+
+    <!-- IMAGEM -->
+
+    <div id="cafeteria" class="image-wrapper">
+
+      <img
+        src="imgs/cafeteria.jpg"
+        alt="Cafeteria Divertrix"
+        class="section-image"
+        title="Cafeteria"
+      >
+
+
+    </div>
+
+
+
+  <img class="image-wrapper"
+        src="imgs/cafeteria_cardápio.jpg"
+        alt="Cardápio da cafeteria"
+        class="section-image"
+        title="Cardápio da cafeteria"
+       
+      >
+
+    </div>
+
+    <div class="cafe-box">
+
+      <h3>
+        Energia para continuar jogando ☕
+      </h3>
+
+      <p>
+
+        O Divertrix Café mistura
+        sobremesas coloridas, cafés especiais,
+        drinks neon e um ambiente inspirado
+        em cafeterias futuristas japonesas.
+
+        <br><br>
+
+        Um espaço aconchegante para descansar,
+        socializar e aproveitar o universo
+        cyberpunk do parque.
+
+      </p>
+
+    </div>
+
+  </section> 
+
+<!-- EVENTOS -->
+
+  <section class="eventos" id="eventos">
+
+    <h2 class="section-title">
+      EVENTOS 🎭
+    </h2>/
+
+
+    <div class="image-wrapper">
+
+      <img
+        src="imgs/eventos.jpg"
+        alt="Eventos"
+        class="section-image"
+        title="Eventos"
+      >
+
+    </div>
+
+    <p class="section-text">
+
+      As atrações do Divertrix transformam cada visita em uma experiência única dentro de um universo neon, futurista e totalmente imersivo. Shows ao vivo, apresentações temáticas, desfiles cyberpunk, noites especiais e experiências interativas criam momentos inesquecíveis em cada área do parque. Cada atração possui identidade visual própria, iluminação vibrante e uma atmosfera cinematográfica tão marcante que parece saída diretamente de um jogo futurista. Mais do que entretenimento, são experiências colecionáveis — memórias que ficam gravadas como parte do universo Divertrix..
+
+
+    </p>
+</section>
+
+
+
+  <!-- CURSOR -->
+
+<div class="cursor"></div>
+<div class="cursor-outline"></div>
+
+<script>
+
+  const cursor = document.querySelector('.cursor');
+  const outline = document.querySelector('.cursor-outline');
+
+  let mouseX = 0;
+  let mouseY = 0;
+
+  let outlineX = 0;
+  let outlineY = 0;
+
+  window.addEventListener('mousemove', (e) => {
+
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    cursor.style.left = mouseX + 'px';
+    cursor.style.top = mouseY + 'px';
+
+  });
+
+  function animateOutline(){
+
+    outlineX += (mouseX - outlineX) * 0.12;
+    outlineY += (mouseY - outlineY) * 0.12;
+
+    outline.style.left = outlineX + 'px';
+    outline.style.top = outlineY + 'px';
+
+    requestAnimationFrame(animateOutline);
+
+  }
+
+  animateOutline();
+
+  /* EFEITO AO PASSAR EM BOTÕES */
+
+  const hoverElements =
+  document.querySelectorAll(
+  'button, a, .card');
+
+  hoverElements.forEach(el => {
+
+    el.addEventListener('mouseenter', () => {
+
+      outline.style.width = '70px';
+      outline.style.height = '70px';
+
+      outline.style.border =
+      '2px solid #ff66c4';
+
+    });
+
+    el.addEventListener('mouseleave', () => {
+
+      outline.style.width = '45px';
+      outline.style.height = '45px';
+
+      outline.style.border =
+      '2px solid rgba(125,249,255,.8)';
+
+    });
+
+  });
+
+ // NAVBAR SCROLL EFFECT
+  window.addEventListener('scroll', () => {
+
+    const navbar =
+    document.querySelector('.custom-navbar');
+
+    navbar.classList.toggle(
+      'scrolled',
+      window.scrollY > 50
+    );
+
+  });
+
+</script>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
+</script>
+
+<script>
+
+  const modal =
+  document.getElementById('cyberModal');
+
+  function openModal(title, text, emoji){
+
+    modal.style.display = 'flex';
+
+    document.getElementById(
+      'modalTitle'
+    ).innerText = title;
+
+    document.getElementById(
+      'modalText'
+    ).innerText = text;
+
+    document.getElementById(
+      'modalEmoji'
+    ).innerText = emoji;
+
+  }
+
+  function closeModal(){
+
+    modal.style.display = 'none';
+
+  }
+
+  /* FECHAR CLICANDO FORA */
+
+  window.addEventListener('click', e => {
+
+    if(e.target === modal){
+
+      closeModal();
+
+    }
+
+  });
+
+</script>
+
+<script>
+
+const movieModal =
+document.getElementById('movieModal');
+
+function openMovieModal(
+  title,
+  desc,
+  image,
+  session
+){
+
+  movieModal.style.display = 'flex';
+
+  document.getElementById(
+    'movieTitle'
+  ).innerText = title;
+
+  document.getElementById(
+    'movieDesc'
+  ).innerText = desc;
+
+  document.getElementById(
+    'movieImage'
+  ).src = image;
+
+  document.getElementById(
+    'movieSession'
+  ).innerText = session;
+
+}
+
+function closeMovieModal(){
+
+  movieModal.style.display = 'none';
+
+}
+
+window.addEventListener('click', e => {
+
+  if(e.target === movieModal){
+
+    closeMovieModal();
+
+  }
+
+});
+
+</script>
+
+<!-- =========================================================
+     FOOTER DIVERTRIX
+========================================================= -->
+
+<footer class="footer-divertrix">
+
+  <!-- Glow decorativo -->
+  <div class="footer-glow"></div>
+
+  <div class="footer-container">
+
+    <!-- MARCA -->
+
+    <div class="footer-brand">
+
+      <h2>DIVERTRIX</h2>
+
+    
+
+      <div class="footer-socials">
+
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">YouTube</a>
+        <a href="#">Discord</a>
+
+      </div>
+
+    </div>
+
+    <!-- NAVEGAÇÃO -->
+
+    <div class="footer-links">
+
+      <h3>Navegação</h3>
+
+      <a href="#sobre_nos">Sobre Nós</a>
+      <a href="#arcade_zone">Arcade Zone</a>
+      <a href="#cinema">Cinema</a>
+      <a href="#cafeteria">Cafeteria</a>
+      <a href="#eventos">Eventos</a>
+
+    </div>
+
+    <!-- EXPERIÊNCIAS -->
+
+    <div class="footer-links">
+
+      <h3>Experiências</h3>
+
+      <a href="#">Máquinas Arcade</a>
+      <a href="#">Gacha & Claw</a>
+      <a href="#">Mini Coaster</a>
+      <a href="#">Ranking Gamer</a>
+      <a href="#">Salas Neon</a>
+
+    </div>
+
+    <!-- SUPORTE -->
+
+    <div class="footer-links">
+
+      <h3>Suporte</h3>
+
+      <a href="#">Ingressos</a>
+      <a href="#">FAQ</a>
+      <a href="#">Contato</a>
+      <a href="#">Termos</a>
+      <a href="#">Privacidade</a>
+
+    </div>
+
+    <!-- NEWSLETTER -->
+
+    <div class="footer-news">
+
+      <h3>Entre no Jogo</h3>
+
+      <p>
+        Receba novidades, eventos,
+        promoções e lançamentos do
+        universo Divertrix.
+      </p>
+
+      <div class="newsletter-box">
+
+        <input
+          type="email"
+          placeholder="Seu e-mail">
+
+        <button>
+          START
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- LINHA -->
+
+  <div class="footer-line"></div>
+
+  <!-- FOOTER BOTTOM -->
+
+  <div class="footer-bottom">
+
+    <p>
+      © 2026 Divertrix — Todos os direitos reservados.
+    </p>
+
+    <span>
+      Brasil • Arcade • Cinema • Café • Cyberpunk
+    </span>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
